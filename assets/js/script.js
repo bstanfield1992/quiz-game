@@ -7,6 +7,7 @@ var stats = document.getElementById('stats')
 var questionText = document.getElementById('question')
 var quiz = document.getElementById('quiz')
 var highscore = document.getElementById('initials')
+var viewScores = document.getElementById('view')
 var choiceA = document.getElementById("a");
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
@@ -91,6 +92,7 @@ function endGame() {
     quiz.setAttribute("style", "display:none")
     highscore.setAttribute("style", "display:block")
     finalScore.textContent = score + counter; 
+
 }
 
 // check answers
@@ -152,7 +154,9 @@ function game() {
 
 var tableName = document.getElementById("tableName");
 var tableScore = document.getElementById("tableScore");
+
 function generateTable() {
+    var name = 
     tableName.textContent = name;
     tableScore.textContent = finalScore;
 }
@@ -160,13 +164,19 @@ function generateTable() {
 // for submitting your highscores.
 
 submit.addEventListener('click', function() {
-    // var name = localStorage.getItem('name');
-    // finalScore = localStorage.getItem(finalScore);
-    // localStorage.setItem('name', name);
-    // localStorage.setItem('score', finalScore);
-    // highscore.setAttribute("style", "display:none");
-    // highscorePage.setAttribute("style", "display:block");
-    // generateTable(name, finalScore);
+    var name = localStorage.getItem('name');
+    finalScore = localStorage.getItem('finalScore');
+    if (name != null || finalScore != null) {
+        localStorage.setItem('name', name);
+        localStorage.setItem('score', finalScore);
+        generateTable(name, finalScore);
+    } else {
+        var name = localStorage.getItem('name');
+        finalScore = localStorage.getItem('finalScore');
+    }
+    
+    highscore.setAttribute("style", "display:none");
+    highscorePage.setAttribute("style", "display:block");
 });
 
 // start the game
@@ -175,3 +185,8 @@ startscreen.setAttribute("style", "display:none")
 count();
 game();
 });
+
+// view scores
+viewScores.addEventListener('click', function() {
+    generateTable();
+})
