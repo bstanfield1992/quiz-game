@@ -4,6 +4,9 @@
     box-sizing: border-box;
 }
 
+header {
+    display: none;
+}
 
 header a {
     display: inline;
@@ -21,7 +24,39 @@ header h4 {
 
 /* start sreen styling */
 
-#norway {
+.center {
     text-align: center;
-    margin-top: 200px;
+    padding: 300px;
+}
+
+#norway {
+    display: block;
+    padding: 10px;
+    color: purple;
+}
+
+#startScreen p {
+    display: block;
+    padding: 20px;
+}
+
+button {
+    display: inline;
+    background-color: darkblue;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* quiz phase css */
+
+#quiz {
+    display: none;
+}
+
+
+#answers {
+    float: left;
+    list-style-type: none;
 }

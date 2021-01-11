@@ -8,19 +8,28 @@
 </head>
 <body>
     <header id="stats">   
-        <a href="#"></a>
-        <h4 id="timeLeft"><span id="timer"></span></h4>
+        <a href="#">View Highscores</a>
+        <h4 id="timeLeft">Time left: <span id="timer">90</span></h4>
     </header>
     <!-- start on load -->
-    <div id="startScreen">
+    <div class="center" id="startScreen">
         <h2 id="norway">Norway</h2>
+        <p id="description">What do you know about Norway?</p>
+        <button id="start">Start</button>
     </div>
     <!-- when start is clicked -->
-    <div id="quiz"></div>
+    <div class="center" id="quiz">
+        <h1 id="question">Filler</h1>
+        <ul id="answers">
+            <li><button id="a">A</button></li>
+            <li><button id="b">B</button></li>
+            <li><button id="c">C</button></li>
+        </ul>
+    </div>
     <!-- when you complete the quiz -->
-    <div id="initials"></div>
+    <div class="center" id="initials"></div>
     <!-- when "view high score" is clicked -->
-    <div id="highscore"></div>
+    <div class="center" id="highscore"></div>
 
     <script src="assets/js/script.js"></script>
 </body>
