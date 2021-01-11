@@ -40,6 +40,8 @@ header h4 {
     padding: 20px;
 }
 
+/* all buttons */
+
 button {
     display: inline;
     background-color: darkblue;
@@ -48,6 +50,10 @@ button {
     color: white;
     text-decoration: none;
     border-radius: 8px;
+}
+
+button:hover {
+    background-color: plum;
 }
 
 /* quiz phase css */
@@ -63,8 +69,28 @@ button {
     list-style-type: none;
 }
 
+
+
 /* css for score screen */
 
 #initials {
     display: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+
+#submitBtn {
+    display: inline;
+    background-color: darkblue;
+    padding: 8px;
+    width: 100px;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+#submitBtn:hover {
+    background-color: plum;
 }

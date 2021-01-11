@@ -1,5 +1,5 @@
 var startbtn = document.getElementById('start');
-var norway = document.getElementById('norway');
+var correct = document.getElementById('correct');
 var desciption = document.getElementById('description')
 var timer = document.getElementById('timer');
 var startscreen = document.getElementById('startScreen')
@@ -11,8 +11,10 @@ var choiceA = document.getElementById("a");
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
 var finalScore = document.getElementById('score');
+var submit = document.getElementById('submitBtn');
+var highscorePage = document.getElementById('highscore');
 var score = 0;
-var counter = 89;
+var counter = 39;
 let questions = [
 
     {
@@ -88,16 +90,18 @@ function endGame() {
     stats.setAttribute("style", "display: none")
     quiz.setAttribute("style", "display:none")
     highscore.setAttribute("style", "display:block")
-    finalScore.textContent = score + counter;
-
-    
+    finalScore.textContent = score; 
 }
-console.log(lastQuestion)
+
 // check answers
 function checkAnswer(answer) {
     if(answer == questions[runningQuestion].correct) {
         score++;
+        correct.setAttribute("style", "border-top: 2px solid grey; color:grey")
+        correct.textContent = "Correct!"
     } else {
+        correct.setAttribute("style", "border-top: 2px solid red; color:red")
+        correct.textContent = "Wrong!"
         counter = counter - 5;
     }
     
@@ -145,6 +149,25 @@ function game() {
 
     renderQuestion();
 }
+
+var tableName = document.getElementById("tableName");
+var tableScore = document.getElementById("tableScore");
+function generateTable() {
+    tableName.textContent = name;
+    tableScore.textContent = finalScore;
+}
+
+// for submitting your highscores.
+
+submit.addEventListener('click', function() {
+    var name = localStorage.getItem('name');
+    finalScore = localStorage.getItem(finalScore);
+    localStorage.setItem('name', name);
+    localStorage.setItem('score', finalScore);
+    highscore.setAttribute("style", "display:none");
+    highscorePage.setAttribute("style", "display:block");
+    generateTable(name, finalScore);
+});
 
 // start the game
 startbtn.addEventListener('click', function() {
