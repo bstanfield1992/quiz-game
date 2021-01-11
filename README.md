@@ -14,7 +14,7 @@ Take a Quiz about Norway
 
 https://bstanfield1992.github.io/quiz-game/
 
-<!-- ![Screenshot](./Screenshots/passwordGen.png) -->
+![Screenshot](.assets/images/quiz.png)
 
 ## Made by
 

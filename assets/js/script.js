@@ -90,7 +90,7 @@ function endGame() {
     stats.setAttribute("style", "display: none")
     quiz.setAttribute("style", "display:none")
     highscore.setAttribute("style", "display:block")
-    finalScore.textContent = score; 
+    finalScore.textContent = score + counter; 
 }
 
 // check answers
@@ -160,13 +160,13 @@ function generateTable() {
 // for submitting your highscores.
 
 submit.addEventListener('click', function() {
-    var name = localStorage.getItem('name');
-    finalScore = localStorage.getItem(finalScore);
-    localStorage.setItem('name', name);
-    localStorage.setItem('score', finalScore);
-    highscore.setAttribute("style", "display:none");
-    highscorePage.setAttribute("style", "display:block");
-    generateTable(name, finalScore);
+    // var name = localStorage.getItem('name');
+    // finalScore = localStorage.getItem(finalScore);
+    // localStorage.setItem('name', name);
+    // localStorage.setItem('score', finalScore);
+    // highscore.setAttribute("style", "display:none");
+    // highscorePage.setAttribute("style", "display:block");
+    // generateTable(name, finalScore);
 });
 
 // start the game
