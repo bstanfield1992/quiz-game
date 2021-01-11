@@ -10,7 +10,9 @@ var highscore = document.getElementById('initials')
 var choiceA = document.getElementById("a");
 var choiceB = document.getElementById("b");
 var choiceC = document.getElementById("c");
+var finalScore = document.getElementById('score');
 var score = 0;
+var counter = 89;
 let questions = [
 
     {
@@ -86,23 +88,23 @@ function endGame() {
     stats.setAttribute("style", "display: none")
     quiz.setAttribute("style", "display:none")
     highscore.setAttribute("style", "display:block")
-
+    finalScore.textContent = score + counter;
 
     
 }
-var score = 0;
+
 // check answers
 function checkAnswer(answer) {
     if(question[runningQuestion].correct == answer) {
-        score++
+        score++;
     } else {
-        timer = timer - 5;
+        time = time - 5;
     }
     if(runningQuestion < lastQuestion) {
         runningQuestion++;
         renderQuestion();
     } else {
-        clearInterval(timer);
+        clearInterval(time);
         endGame();
     }
 }
@@ -122,17 +124,30 @@ function renderQuestion() {
     
 }
 
+function count() {
+
+    var time = setInterval(function() {
+        if(counter > 0) {
+            timer.textContent = counter;
+            counter--;
+        } else {
+            clearInterval(time);
+            endGame();
+        }
+    }, 1000)
+};
+
 // play the game
 function game() {
     stats.setAttribute("style", "display: block")
     quiz.setAttribute("style", "display:block")
 
     renderQuestion();
-
 }
 
 // start the game
 startbtn.addEventListener('click', function() {
 startscreen.setAttribute("style", "display:none")
+count();
 game();
 });
