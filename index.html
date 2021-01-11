@@ -21,13 +21,15 @@
     <div class="center" id="quiz">
         <h1 id="question">Filler</h1>
         <ul id="answers">
-            <li><button id="a">A</button></li>
-            <li><button id="b">B</button></li>
-            <li><button id="c">C</button></li>
+            <li><button id="a" onClick="checkAnswer('a')">A</button></li>
+            <li><button id="b" onClick="checkAnswer('b')">B</button></li>
+            <li><button id="c" onClick="checkAnswer('c')">C</button></li>
         </ul>
     </div>
     <!-- when you complete the quiz -->
-    <div class="center" id="initials"></div>
+    <div class="center" id="initials">
+        <p>Your Score is: <span id="score">0</span></p>
+    </div>
     <!-- when "view high score" is clicked -->
     <div class="center" id="highscore"></div>
 

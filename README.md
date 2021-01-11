@@ -1,0 +1,21 @@
+# Portfolio
+
+## Purpose
+
+Take a Quiz about Norway
+
+## built with
+
+* HTML
+* CSS
+* JS
+
+## Website
+
+https://bstanfield1992.github.io/quiz-game/
+
+<!-- ![Screenshot](./Screenshots/passwordGen.png) -->
+
+## Made by
+
+Benjamin Stanfield
