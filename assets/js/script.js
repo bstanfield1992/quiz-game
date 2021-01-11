@@ -92,19 +92,20 @@ function endGame() {
 
     
 }
-
+console.log(lastQuestion)
 // check answers
 function checkAnswer(answer) {
-    if(question[runningQuestion].correct == answer) {
+    if(answer == questions[runningQuestion].correct) {
         score++;
     } else {
-        time = time - 5;
+        counter = counter - 5;
     }
+    
     if(runningQuestion < lastQuestion) {
         runningQuestion++;
         renderQuestion();
     } else {
-        clearInterval(time);
+        clearInterval(count);
         endGame();
     }
 }
