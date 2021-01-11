@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+header a {
+    display: inline;
+    text-decoration: none;
+    color: plum;
+    padding: 40px;
+    float: left;
+}
+
+header h4 {
+    display: inline;
+    float: right;
+    padding: 40px;
+}
+
+/* start sreen styling */
+
+#norway {
+    text-align: center;
+    margin-top: 200px;
+}
